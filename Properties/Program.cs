@@ -13,16 +13,19 @@ namespace Properties
         private int password;
         private string role;
 
-       
+
         public string Login
         {
             set
             {
-                if (login.Length < 10)
+                if (value.Length < 10)
                 {
                     Console.WriteLine("Login can not be less than 10 symbols");
+                    
                 }
-                else { login = value; }
+                else { login = value;
+                    description();
+                }
             }
 
             get
@@ -59,13 +62,13 @@ namespace Properties
             }
         }
 
-        public User (string l, string r,  int p)
-            {
-            l = Login;
-            r = Role;
-            p = Password;
+        public User(string l, string r, int p)
+        {
+            Login = l;
+            Role = r;
+            Password = p;
 
-            }
+        }
 
 
         public void description()
@@ -73,8 +76,12 @@ namespace Properties
 
             {
                
+                {
 
-                Console.WriteLine($"Role: { Login} \nLogin: { Role} \nPassword: { Password}");
+                    Console.WriteLine($"Role: { login} \nLogin: { Role} \nPassword: { Password}");
+                }
+
+                
             }
 
 
@@ -96,16 +103,17 @@ namespace Properties
 
             //Console.ReadKey();
 
-            User tom = new User("asd","asd", 123);               
-            tom.description();
+            User tom = new User("asasdasdfasdfd3", "asd", 123);
+          
            
+
 
         }
 
-       
 
-    } 
+
+    }
 }
 
-        
+
 
