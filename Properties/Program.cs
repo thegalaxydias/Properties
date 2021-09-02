@@ -13,6 +13,9 @@ namespace Properties
         private int password;
         private string role;
 
+        public string country { get; set; }
+        public int zipcode { get; set; } 
+
 
         public string Login
         {
@@ -21,11 +24,12 @@ namespace Properties
                 if (value.Length < 10)
                 {
                     Console.WriteLine("Login can not be less than 10 symbols");
-                    
+                   
                 }
-                else { login = value;
-                    description();
+                else { login = value; Console.WriteLine("Login: " + Login);
+
                 }
+               
             }
 
             get
@@ -44,7 +48,7 @@ namespace Properties
 
             set
             {
-                password = value;
+                password = value; Console.WriteLine("Password: " + Password);
             }
         }
 
@@ -58,34 +62,21 @@ namespace Properties
 
             set
             {
-                role = value;
+                role = value; Console.WriteLine("Role: " + Role);
             }
         }
 
-        public User(string l, string r, int p)
+        public User(string l, string r, int p, string c, int z)
         {
             Login = l;
             Role = r;
             Password = p;
+            country = c;
+            zipcode = z;
 
         }
 
 
-        public void description()
-        {
-
-            {
-               
-                {
-
-                    Console.WriteLine($"Role: { login} \nLogin: { Role} \nPassword: { Password}");
-                }
-
-                
-            }
-
-
-        }
     }
     public class Program
     {
@@ -94,18 +85,13 @@ namespace Properties
 
 
 
-            ////Console.Write("Enter login: ");
-            ////string login = Console.ReadLine();
-            ////Console.Write("Enter role: ");
-            ////string role = Console.ReadLine();
-            ////Console.Write("Enter password: ");
-            ////int password = Convert.ToInt32(Console.ReadLine());
 
-            //Console.ReadKey();
+            User tom = new User("j", "asd", 123, "USA", 666);
 
-            User tom = new User("asasdasdfasdfd3", "asd", 123);
-          
-           
+            Console.WriteLine("Country: " + tom.country);
+            Console.WriteLine("ZipCode: "+ tom.zipcode);
+
+
 
 
         }
